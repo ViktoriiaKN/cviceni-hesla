@@ -1,3 +1,9 @@
+function createAccount (user, generatePassword) {
+return `Uživatel ${user} s heslem ${generatePassword(9)}`
+};
+
+
+
 const weakPassword = (len) => {
   let result = '';
   for (let i = 0; i < len; i++) {
@@ -27,3 +33,11 @@ const strongPassword = (len) => {
 
   return result;
 };
+
+
+document.body.innerHTML += `
+	<p>${createAccount('Míša', weakPassword)}</p>
+	<p>${createAccount('Řízek', mediumPassword)}</p>
+	<p>${createAccount('Mápodčepicí', strongPassword)}</p>
+`;
+
